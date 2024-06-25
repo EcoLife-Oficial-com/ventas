@@ -1,0 +1,49 @@
+let carrito = [];
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre: nombre, precio: precio });
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    let carritoElemento = document.getElementById('carrito-lista');
+    let carritoTotalElemento = document.getElementById('carrito-total');
+    carritoElemento.innerHTML = '';
+    let total = 0;
+    carrito.forEach((producto) => {
+        let li = document.createElement('li');
+        li.textContent = `${producto.nombre} - $${producto.precio}`;
+        carritoElemento.appendChild(li);
+        total += producto.precio;
+    });
+    carritoTotalElemento.textContent = total.toFixed(2);
+    mostrarCarrito();
+}
+
+function mostrarCarrito() {
+    let carritoDiv = document.getElementById('carrito');
+    carritoDiv.style.display = 'block';
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function realizarPago() {
+    if (carrito.length === 0) {
+        alert('Tu carrito está vacío. Agrega algunos productos antes de realizar el pago.');
+    } else {
+        alert(`Total a Pagar: $${document.getElementById('carrito-total').textContent}`);
+        carrito = [];
+        actualizarCarrito();
+    }
+}
+
+document.getElementById('contacto-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let nombre = document.getElementById('nombre').value;
+    let email = document.getElementById('email').value;
+    let mensaje = document.getElementById('mensaje').value;
+    console.log(`Nombre: ${nombre}, Email: ${email}, Mensaje: ${mensaje}`);
+    alert('Mensaje enviado correctamente. ¡Gracias por contactarnos!');
+    document.getElementById('nombre').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('mensaje').value = '';
+});

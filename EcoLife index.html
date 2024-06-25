@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLife - Productos Ecológicos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>EcoLife</h1>
+    <p>Productos Ecológicos y Sostenibles</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#blog">Blog</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#acerca">Acerca de Nosotros</a>
+</nav>
+
+<div class="container" id="inicio">
+    <h2>Bienvenidos a EcoLife</h2>
+    <p>En EcoLife, creemos en un futuro sostenible. Ofrecemos una variedad de productos ecológicos que ayudan a reducir el impacto ambiental.</p>
+</div>
+
+<div class="container" id="productos">
+    <h2>Productos Destacados</h2>
+    <div class="product">
+        <h3>Utensilios de Cocina de Bambú</h3>
+        <p>Utensilios duraderos y ecológicos hechos de bambú.</p>
+        <p>Precio: $15.99</p>
+        <button onclick="agregarAlCarrito('Utensilios de Cocina de Bambú', 15.99)">Agregar al Carrito</button>
+    </div>
+    <div class="product">
+        <h3>Bolsas Reutilizables</h3>
+        <p>Perfectas para las compras diarias, ayudando a reducir el uso de plástico.</p>
+        <p>Precio: $9.99</p>
+        <button onclick="agregarAlCarrito('Bolsas Reutilizables', 9.99)">Agregar al Carrito</button>
+    </div>
+</div>
+
+<div class="container" id="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="carrito-lista">
+        <!-- Aquí se agregan dinámicamente los productos del carrito -->
+    </ul>
+    <p>Total: $<span id="carrito-total">0.00</span></p>
+    <button onclick="realizarPago()">Realizar Pago</button>
+</div>
+
+<div class="container" id="blog">
+    <h2>Blog de EcoLife</h2>
+    <div class="blog-post">
+        <h3>Beneficios de Usar Productos Ecológicos</h3>
+        <p>Descubre cómo los productos ecológicos pueden mejorar tu estilo de vida y ayudar al medio ambiente.</p>
+    </div>
+    <div class="blog-post">
+        <h3>Recetas Sostenibles para Cocinar en Casa</h3>
+        <p>Aprende recetas deliciosas que utilizan ingredientes locales y sostenibles.</p>
+    </div>
+</div>
+
+<div class="container" id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
+    <form id="contacto-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+</div>
+
+<div class="container" id="acerca">
+    <h2>Acerca de Nosotros</h2>
+    <p>EcoLife se fundó en 2024 con la misión de promover un estilo de vida sostenible. Nos enorgullece ofrecer productos ecológicos y trabajar por un futuro más verde y limpio para todos.</p>
+</div>
+
+<footer>
+    <p>EcoLife © 2024. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
